@@ -7,6 +7,13 @@
     "dist",
     "src"
   ],
+  "keywords": [
+    "modal",
+    "Vue Modal",
+    "usemodal",
+    "Vue.js",
+    "Vue2"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -30,7 +37,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@use-modal/vue",
+  "name": "@use-modals/vue",
   "author": "rwson",
   "module": "dist/vue.esm.js",
   "size-limit": [
@@ -44,9 +51,9 @@
     }
   ],
   "dependencies": {
-    "@types/vue": "^2.0.0",
-    "parcel-config-vue2": "^0.1.3",
-    "parcel-transformer-vue2": "^0.1.7",
     "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@types/vue": "^2.0.0"
   }
 }
