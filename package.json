@@ -1,0 +1,27 @@
+{
+  "name": "modal-hooks",
+  "version": "1.0.0",
+  "description": "an eaist way to open/close modals and pass props to modals, or register an dynmaic modal and you can use these modals globally, support React, Vue, Vue3",
+  "keywords": [
+    "modal",
+    "open modal",
+    "close modal",
+    "update modal",
+    "react modal",
+    "vue modal",
+    "vue3 modal"
+  ],
+  "scripts": {
+    "start": "sh ./scripts/start.sh"
+  },
+  "author": "rwson",
+  "license": "ISC",
+  "dependencies": {
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "husky": "^8.0.3",
+    "parcel": "^1.12.3",
+    "size-limit": "^8.2.4",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  }
+}

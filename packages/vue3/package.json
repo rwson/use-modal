@@ -1,0 +1,52 @@
+{
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@use-modal/vue3",
+  "author": "rwson",
+  "module": "dist/vue3.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/vue3.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/vue3.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "dependencies": {
+    "vue": "^3.2.47"
+  }
+}
