@@ -23,6 +23,7 @@ export const mutation = (value: UpdateStatePayload) => {
       }
       state[payload?.id!].visible = true
       state[payload?.id!].props = payload?.props!
+      console.log(state)
     break
 
     case ModalActionType.CloseModal:

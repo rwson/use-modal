@@ -1,0 +1,25 @@
+{
+  "name": "parcel-vuejs-example",
+  "description": "Simple Vue.js example",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@use-modals/vue": "file:.yalc/@use-modals/vue",
+    "core-js": "3",
+    "element-ui": "^2.15.13",
+    "vue": "2.6.11",
+    "vue-hot-reload-api": "^2.3.1",
+    "vue-router": "3"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.3.0",
+    "parcel-bundler": "^1.10.3",
+    "typescript": "^5.0.4",
+    "vue-template-compiler": "2.6.11",
+    "core-js": "3"
+  }
+}

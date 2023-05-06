@@ -21,13 +21,5 @@
   "dependencies": {
     "vue": "2.6.11"
   },
-  "devDependencies": {
-    "@types/node": "^18.14.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.2",
-    "vite-plugin-vue2": "^2.0.3",
-    "vite-plugin-dts": "^2.3.0",
-    "vue-template-compiler": "2.6.11",
-    "vue-tsc": "^1.4.2"
-  }
+  "yalcSig": "db6519f0a40795a4b96b210a4f860307"
 }
