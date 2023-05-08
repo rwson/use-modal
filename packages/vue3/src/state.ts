@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { reactive, toRaw } from 'vue'
 
 import { ModalActionType } from './enums'
 
@@ -11,7 +11,7 @@ interface UpdateStatePayload {
   }
 }
 
-export const state = Vue.observable<Record<string, any>>({})
+export const state = reactive<Record<string, any>>({})
 
 export const mutation = (value: UpdateStatePayload) => {
   const { type, payload } = value
@@ -46,16 +46,16 @@ export const mutation = (value: UpdateStatePayload) => {
       break
 
     case ModalActionType.CloseAllModals:
-      Object.keys(state).forEach((key) => {
+      Object.keys(toRaw(state)).forEach((key) => {
         state[key].visible = false
       })
       break
 
     case ModalActionType.RegisterModal:
-      Vue.set(state, payload?.id!, {
+      state[payload?.id!] = {
         visible: false,
-        props: {}
-      })
+        props: {}        
+      }
       break
 
     case ModalActionType.RemoveModal:

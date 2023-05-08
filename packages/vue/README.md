@@ -54,7 +54,7 @@ new Vue({
 
 ```vue
 <template>
-  <Button @clock="openModal('modalIdToBeOpen')">
+  <Button @click="openModal('modalIdToBeOpen')">
     open Modal
   </Button>
 </template>
@@ -67,10 +67,10 @@ new Vue({
 ```vue
 <template>
 	<div>    
-    <Button @clock="openAndUpdate">
+    <Button @click="openAndUpdate">
       open Modal and update
     </Button>
-     <Button @clock="openAndUpdate">
+     <Button @click="openAndUpdate">
       open Modal and update(merge)
     </Button>
   </div>
@@ -106,7 +106,7 @@ new Vue({
 
 ```vue
 <template>
-	<Button @clock="closeModal('modalIdToBeClose')">
+	<Button @click="closeModal('modalIdToBeClose')">
     close Modal
   </Button>
 </template>
@@ -116,7 +116,7 @@ new Vue({
 
 ```vue
 <template>
-	<Button @clock="closeAllModals">
+	<Button @click="closeAllModals">
     close all Modals
   </Button>
 </template>

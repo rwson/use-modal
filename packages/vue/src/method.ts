@@ -22,7 +22,7 @@ export const injectMethods = (vm: typeof Vue) => {
     payload: {
       id,
       props
-    }    
+    }
   })
 
   vm.prototype.updateModal = (id: string, props: Record<string, any>, merge?: boolean) => mutation({

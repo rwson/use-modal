@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@use-modals/vue3": {
+      "signature": "1ee804967b36e7101c1c85c1daef304e",
+      "file": true
+    }
+  }
+}

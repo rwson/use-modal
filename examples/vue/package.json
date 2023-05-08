@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@use-modals/vue": "file:.yalc/@use-modals/vue",
+    "@use-modals/vue3": "file:.yalc/@use-modals/vue3",
     "core-js": "3",
     "element-ui": "^2.15.13",
     "vue": "2.6.11",
@@ -17,9 +18,9 @@
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.3.0",
+    "core-js": "3",
     "parcel-bundler": "^1.10.3",
     "typescript": "^5.0.4",
-    "vue-template-compiler": "2.6.11",
-    "core-js": "3"
+    "vue-template-compiler": "2.6.11"
   }
 }

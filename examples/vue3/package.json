@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@use-modals/vue3": "file:.yalc/@use-modals/vue3",
+    "ant-design-vue": "^3.2.20",
     "vue": "^3.2.47"
   },
   "devDependencies": {
