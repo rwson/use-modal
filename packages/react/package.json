@@ -1,14 +1,23 @@
 {
   "name": "@use-modals/react",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "url": "https://github.com/rwson/use-modal",
+    "type": "git"
+  },
+  "bugs": "https://github.com/rwson/use-modal/issues",
+  "homepage": "https://github.com/rwson/use-modal#readme",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "immer": "^10.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

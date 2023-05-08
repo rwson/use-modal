@@ -5,6 +5,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "url": "https://github.com/rwson/use-modal",
+    "type": "git"
+  },
+  "bugs": "https://github.com/rwson/use-modal/issues",
+  "homepage": "https://github.com/rwson/use-modal#readme",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",

@@ -35,3 +35,14 @@
 ### <Fixed>
 
 - check if the modal has been opened before calling `updateModal`
+
+## [@use-modals/react@1.0.0] - 2023-05-08
+
+### <Features>
+
+- Implement  `ModalProvider`
+- Implement `useRegisterModal` function
+- Implement `useOpenModal` function
+- Implement `useUpdateModal` function
+- Implement `useCloseModal` function
+- Implement `useCloseAllModals` function

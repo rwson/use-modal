@@ -8,8 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@use-modals/vue": "file:.yalc/@use-modals/vue",
-    "@use-modals/vue3": "file:.yalc/@use-modals/vue3",
+    "@use-modals/vue": "^1.0.0",
     "core-js": "3",
     "element-ui": "^2.15.13",
     "vue": "2.6.11",

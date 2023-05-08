@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "@use-modals/vue": {
-      "signature": "db6519f0a40795a4b96b210a4f860307",
-      "file": true
-    }
-  }
-}
