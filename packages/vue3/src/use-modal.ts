@@ -1,16 +1,8 @@
-import { onBeforeUnmount, useSlots, computed, defineComponent } from 'vue'
+import { onBeforeUnmount, computed, defineComponent } from 'vue'
 import { useRegisterModal, useRemoveModal } from './hooks'
 import { state } from './state'
 
-interface Props {
-  readonly modalId: string
-  readonly isGlobal?: boolean
-}
-
-const modalState = computed(() => state[props.modalId])
-const slots = useSlots()
-
-export default defineComponent({
+export const UseModal = defineComponent({
   name: 'UseModal',
   props: {
     modalId: {
@@ -39,3 +31,5 @@ export default defineComponent({
     return () => context.slots?.modal?.(modalState.value)    
   }
 })
+
+export default UseModal

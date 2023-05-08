@@ -1,8 +1,5 @@
-import { App, onBeforeUnmount, computed } from 'vue'
-
-import { useRegisterModal, useRemoveModal } from './hooks'
-import { state } from './state'
-import UseModal from './UseModal'
+import { App } from 'vue'
+import UseModal from './use-modal'
 
 export const installComponent = (app: App) => {
   app.component('UseModal', UseModal)

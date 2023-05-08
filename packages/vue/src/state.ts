@@ -26,6 +26,13 @@ export const mutation = (value: UpdateStatePayload) => {
     break
 
     case ModalActionType.CloseModal:
+      if (!state[payload?.id!]) {
+        throw new Error(`modal '${payload?.id}' not exist, please register it before your use`)
+      }
+
+      if (!state[payload?.id!].visible) {
+        throw new Error(`modal '${payload?.id}' not opened, please call 'openModal' to open it before call 'closeModal'`)
+      }
       state[payload?.id!].visible = false
       break
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useOpenModal, useCloseModal, useUpdateModal } from '@use-modals/vue3'
+import { useOpenModal, useCloseModal, useUpdateModal } from '@usemodals/vue3'
 import { Modal, Button } from 'ant-design-vue'
 
 const openModal = useOpenModal()
@@ -12,6 +12,8 @@ const openAndUpdate = (merge?: boolean) => {
     updateModal('modalId', { content: 'update modal content' }, merge)
   }, 3000)
 }
+
+import Demo from './demo'
 </script>
 
 <template>
@@ -26,5 +28,7 @@ const openAndUpdate = (merge?: boolean) => {
   <Button @click="openModal('modalId', { title: 'MODAL TITLE' })">open modal</Button>
   <Button @click="() => openAndUpdate()">open modal and update props after 3s(override props)</Button>
   <Button @click="openAndUpdate(true)">open modal and update props after 3s(merge props)</Button>
+
+  <Demo />
 </template>
 

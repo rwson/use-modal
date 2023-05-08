@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import UseModals from '@use-modals/vue3'
+import UseModals from '@usemodals/vue3'
 
 import './style.css'
 import App from './App.vue'

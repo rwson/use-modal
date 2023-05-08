@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@usemodals/react": "file:.yalc/@usemodals/react",
+    "antd": "^4.19.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

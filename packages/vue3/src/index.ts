@@ -1,5 +1,6 @@
-import { UseModals } from './plugin'
+import { UseModalsPlugin } from './plugin'
 
 export { useOpenModal, useUpdateModal, useCloseModal, useCloseAllModals } from './hooks'
+export { UseModal } from './use-modal'
 
-export default UseModals
+export default UseModalsPlugin

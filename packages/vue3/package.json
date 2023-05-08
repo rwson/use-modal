@@ -1,10 +1,19 @@
 {
-  "name": "@use-modals/vue3",
+  "name": "@usemodals/vue3",
   "version": "1.0.1",
   "type": "module",
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "modal",
+    "vue modal",
+    "vue3 modal",
+    "open modal",
+    "close modal",
+    "update modal",
+    "close all modals"
+  ],
   "repository": {
     "url": "https://github.com/rwson/use-modal",
     "type": "git"

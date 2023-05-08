@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import VueRouter from 'vue-router'
-import UseModals from '@use-modals/vue'
+import UseModals from '@usemodals/vue'
 
 import App from './App.vue'
 import { router } from './routes'

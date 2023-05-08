@@ -1,11 +1,13 @@
-# @use-modals/vue
+# @usemodals/vue
+
+![](https://i.328888.xyz/2023/05/08/i1dV1H.png)
 
 > an eaist way to open/close modals and pass props to modals, or register an dynmaic modal and you can use these modals globally, for Vue 2.x
 
 ## Install
 
 ```bash
-npm install @use-modals/vue
+npm install @usemodals/vue
 ```
 
 ## QuickStart
@@ -13,7 +15,7 @@ npm install @use-modals/vue
 ```typescript
 //	main.ts
 import Vue from 'vue'
-import UseModals from '@use-modals/vue'
+import UseModals from '@usemodals/vue'
 
 import App from './app.vue'
 
@@ -121,3 +123,11 @@ new Vue({
   </Button>
 </template>
 ```
+
+### Motivation
+
+- reduce unnecessary business code
+- easier to controll modal display/hidden or update modals' props
+- common modal props
+
+For detail demo, check [here](https://github.com/rwson/use-modal/tree/main/examples/vue)

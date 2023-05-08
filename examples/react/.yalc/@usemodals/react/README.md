@@ -1,8 +1,6 @@
 # @usemodals/react
 
-![](https://i.328888.xyz/2023/05/08/i1dV1H.png)
-
-> the eaist way to open/close modals and pass props to modals, or register an dynmaic modal and you can use these modals globally, for React
+the eaist way to open/close modals and pass props to modals, or register an dynmaic modal and you can use these modals globally, for React
 
 **If you are looking for documentation for obsolete [react-modal-better-hooks@1](https://github.com/rwson/react-modal-hooks/tree/v1), please, check this branch.**
 
@@ -109,9 +107,12 @@ const Page = () => {
 
   return (
   	<>
-    	<div onClick={() => openModal('idOfModalToOpen', {
-        title: 'modalTitle',
-        content: 'modalContent'
+    	<div onClick={() => openModal({
+        modalId: 'idOfModalToOpen',
+        props: {
+          title: 'modalTitle',
+          content: 'modalContent'
+        }
       })}></div>
     </>
   )
@@ -196,8 +197,11 @@ const Page = () => {
 					*/
         setTimeOut(() => {
           updateModal('idOfModalToUpdate', {
-            title: 'newModalTitle'
-          }, true)
+            merge: true,
+            props: {
+              title: 'newModalTitle'
+            }
+          })
         }, 5000)
         
         /**
@@ -207,8 +211,10 @@ const Page = () => {
 					*/
         setTimeOut(() => {
           updateModal('idOfModalToUpdate', {
-            title: 'newModalTitle',
-            content: 'newModalContent'
+            props: {
+              title: 'newModalTitle',
+              content: 'newModalContent'
+            }
           })
         }, 10000)
       }}>open and update modal</div>

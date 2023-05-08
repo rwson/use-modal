@@ -1,11 +1,13 @@
-# @use-modals/vue3
+# @usemodals/vue3
+
+![](https://i.328888.xyz/2023/05/08/i1dV1H.png)
 
 > an eaist way to open/close modals and pass props to modals, or register an dynmaic modal and you can use these modals globally, for Vue 3.x
 
 ## Install
 
 ```bash
-npm install @use-modals/vue3
+npm install @usemodals/vue3
 ```
 
 ## QuickStart
@@ -13,7 +15,7 @@ npm install @use-modals/vue3
 ```typescript
 //	main.ts
 import Vue from 'vue'
-import UseModals from '@use-modals/vue3'
+import UseModals from '@usemodals/vue3'
 
 import App from './app.vue'
 
@@ -58,7 +60,7 @@ app.mount('#app')
   </Button>
 </template>
 <script setup lang="ts">
-import { useOpenModal } from '@use-modals/vue3'
+import { useOpenModal } from '@usemodals/vue3'
 
 const openModal = useOpenModal()
 </script>
@@ -78,7 +80,7 @@ const openModal = useOpenModal()
   </div>
 </template>
 <script setup lang="ts">
-import { useOpenModal, useUpdateModal } from '@use-modals/vue3'
+import { useOpenModal, useUpdateModal } from '@usemodals/vue3'
 const openModal = useOpenModal()
 const updateModal = useUpdateModal()
 
@@ -100,7 +102,7 @@ const openAndUpdate = (merge?: boolean) => {
   </Button>
 </template>
 <script setup lang="ts">
-import { useCloseModal } from '@use-modals/vue3'
+import { useCloseModal } from '@usemodals/vue3'
 
 const closeModal = useCloseModal()
 </script>
@@ -115,8 +117,16 @@ const closeModal = useCloseModal()
   </Button>
 </template>
 <script setup lang="ts">
-import { useCloseAllModals } from '@use-modals/vue3'
+import { useCloseAllModals } from '@usemodals/vue3'
 
 const closeAllModals = useCloseAllModals()
 </script>
 ```
+
+### Motivation
+
+- reduce unnecessary business code
+- easier to controll modal display/hidden or update modals' props
+- common modal props
+
+For detail demo, check [here](https://github.com/rwson/use-modal/tree/main/examples/vue3)
