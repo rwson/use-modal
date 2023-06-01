@@ -15,5 +15,8 @@
     "start": "sh ./scripts/start.sh"
   },
   "author": "rwson",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@usemodals/vue3": "file:.yalc/@usemodals/vue3"
+  }
 }

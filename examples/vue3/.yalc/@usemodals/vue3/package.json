@@ -1,5 +1,5 @@
 {
-  "name": "@usemodals/vue",
+  "name": "@usemodals/vue3",
   "version": "1.1.0",
   "type": "module",
   "publishConfig": {
@@ -8,6 +8,7 @@
   "keywords": [
     "modal",
     "vue modal",
+    "vue3 modal",
     "open modal",
     "close modal",
     "update modal",
@@ -20,31 +21,23 @@
   "bugs": "https://github.com/rwson/use-modal/issues",
   "homepage": "https://github.com/rwson/use-modal#readme",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "vite build",
     "link:local": "yarn build && yalc publish --push"
   },
-  "main": "./dist/use-modals-vue.cjs.js",
-  "module": "./dist/use-modals-vue.es.js",
+  "main": "./dist/use-modals-vue3.cjs.js",
+  "module": "./dist/use-modals-vue3.es.js",
   "typings": "./dist/index.d.ts",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/use-modals-vue.es.js",
-      "require": "./dist/use-modals-vue.cjs.js",
+      "import": "./dist/use-modals-vue3.es.js",
+      "require": "./dist/use-modals-vue3.cjs.js",
       "types": "./dist/index.d.ts"
     }
   },
   "dependencies": {
-    "vue": "2.6.11"
+    "vue": "^3.2.47"
   },
-  "devDependencies": {
-    "@types/node": "^18.14.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.2",
-    "vite-plugin-vue2": "^2.0.3",
-    "vite-plugin-dts": "^2.3.0",
-    "vue-template-compiler": "2.6.11",
-    "vue-tsc": "^1.4.2"
-  }
+  "yalcSig": "cd7aced28608927d514b54175810c6b0"
 }

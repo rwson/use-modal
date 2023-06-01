@@ -17,21 +17,21 @@ npm install @usemodals/react
 
 - Wrap app entry with `ModalProvider`
 ```jsx
-import { ModalProvider } from '@usemodals/react'
+  import { ModalProvider } from '@usemodals/react'
 
-export default () => {
-  return (
-    <div>      
-      <ModalProvider defaultProps={{
-        width: '500px',
-        centered: true
-      }}>
-        <AppComponnet />
-      </ModalProvider>
-    </div>
-  )
-}
-```
+  export default () => {
+    return (
+      <div>      
+        <ModalProvider defaultProps={{
+          width: '500px',
+          centered: true
+        }}>
+          <AppComponnet />
+        </ModalProvider>
+      </div>
+    )
+  }
+  ```
 
 ## API
 
@@ -42,8 +42,8 @@ This hooks is used to register the modals, register modals by calling the hooks
 - Parameters
 
   ```typescript
-  useRegisterModal(modals)
-  ```
+    useRegisterModal(modals)
+    ```
 
   | name                | description                                                  | default |
   | ------------------- | ------------------------------------------------------------ | ------- |
@@ -56,28 +56,28 @@ This hooks is used to register the modals, register modals by calling the hooks
 
 
 ```tsx
-import { useRegisterModal } from '@usemodals/react'
+  import { useRegisterModal } from '@usemodals/react'
 
-import Modal1 from 'path/to/modal1'
+  import Modal1 from 'path/to/modal1'
 
-const Page = () => {
-  useRegisterModal({
-    modal1: {
-      component: modal1
-    },
-    modal2: {
-      isLazy: true,
-      loader: () => import('path/to/modal2')
-    }
-  })
+  const Page = () => {
+    useRegisterModal({
+      modal1: {
+        component: modal1
+      },
+      modal2: {
+        isLazy: true,
+        loader: () => import('path/to/modal2')
+      }
+    })
 
-  return (
-  	<>
-    	{/* page logic */}
-    </>
-  )
-}
-```
+    return (
+      <>
+        {/* page logic */}
+      </>
+    )
+  }
+  ```
 
 #### `useOpenModal`
 
@@ -86,8 +86,8 @@ This hooks is used to open modal, it returns a function to open modal, and open 
 - Parameters
 
   ```typescript
-  openModal(modalId, props)
-  ```
+    openModal(modalId, props)
+    ```
 
   | name    | description                                               | default |
   | ------- | --------------------------------------------------------- | ------- |
@@ -97,26 +97,26 @@ This hooks is used to open modal, it returns a function to open modal, and open 
 - Useage
 
 ```tsx
-import { useOpenModal } from '@usemodals/react'
+  import { useOpenModal } from '@usemodals/react'
 
-interface ModalProps {
-	title: string
-  content: string
-}
+  interface ModalProps {
+    title: string
+    content: string
+  }
 
-const Page = () => {
-  const openModal = useOpenModal<ModalPropsInterface>()
+  const Page = () => {
+    const openModal = useOpenModal<ModalPropsInterface>()
 
-  return (
-  	<>
-    	<div onClick={() => openModal('idOfModalToOpen', {
-        title: 'modalTitle',
-        content: 'modalContent'
-      })}></div>
-    </>
-  )
-}
-```
+    return (
+      <>
+        <div onClick={() => openModal('idOfModalToOpen', {
+          title: 'modalTitle',
+          content: 'modalContent'
+        })}></div>
+      </>
+    )
+  }
+  ```
 
 #### `useCloseModal`
 
@@ -125,10 +125,10 @@ This hooks is used to close modal or close all modals, it returns a function nam
 - Parameters
 
   ```typescript
-  const { closeModal, closeAllModals } = useCloseModal()
+    const { closeModal } = useCloseModal()
 
-  closeModal('modalId')
-  ```
+    closeModal('modalId')
+    ```
 
   | name    | description                                               | default |
   | ------- | --------------------------------------------------------- | ------- |
@@ -136,20 +136,20 @@ This hooks is used to close modal or close all modals, it returns a function nam
 
 - Useage
 
-```tsx
-import { useCloseModal } from '@usemodals/react'
+  ```tsx
+    import { useCloseModal } from '@usemodals/react'
 
-const Page = () => {
-  const { closeModal, closeAllModals } = useCloseModal()
-  
-  return (
-  	<>
-    	<div onClick={() => closeModal('idOfModalToClose')}>close one modal</div>
-    	<div onClick={closeAllModals}>close all modals</div>
-    </>
-  )
-}
-```
+    const Page = () => {
+      const { closeModal, closeAllModals } = useCloseModal()
+      
+      return (
+        <>
+          <div onClick={() => closeModal('idOfModalToClose')}>close one modal</div>
+          <div onClick={closeAllModals}>close all modals</div>
+        </>
+      )
+    }
+    ```
 
 #### `useUpdateModal`
 
@@ -158,6 +158,9 @@ The props of the modal are not necessarily completely unchanged, so if you need 
 - Parameters
 
   ```typescript
+  import { useUpdateModal } from '@usemodals/react'
+
+  const updateModal = useUpdateModal()
   updateModal(modalId, config)
   ```
 
@@ -169,53 +172,64 @@ The props of the modal are not necessarily completely unchanged, so if you need 
 
 - Usage
 
-```tsx
-import { useUpdateModal, useOpenModal } from '@usemodals/react'
+  ```tsx
+    import { useUpdateModal, useOpenModal } from '@usemodals/react'
 
-interface ModalProps {
-	title: string
-  content: string
-}
+    interface ModalProps {
+      title: string
+      content: string
+    }
 
-const Page = () => {
-  const openModal = useOpenModal<ModalPropsInterface>()
-  const updateModal = useUpdateModal<ModalPropsInterface>()
-  
-  return (
-  	<>
-    	<div onClick={() => {
-        openModal('idOfModalToOpen', {
-          title: 'modalTitle',
-          content: 'modalContent'
-        })
-        
-				/**
-					* the modal's props will be 
-					* { title: 'newModalTitle', content: 'modalContent' }
-					* during second render
-					*/
-        setTimeOut(() => {
-          updateModal('idOfModalToUpdate', {
-            title: 'newModalTitle'
-          }, true)
-        }, 5000)
-        
-        /**
-					* the modal's props will be 
-					* { title: 'newModalTitle', content: 'newModalContent' }
-					* during second render
-					*/
-        setTimeOut(() => {
-          updateModal('idOfModalToUpdate', {
-            title: 'newModalTitle',
-            content: 'newModalContent'
-          })
-        }, 10000)
-      }}>open and update modal</div>
-    </>
-  )
-}
-```
+    const Page = () => {
+      const openModal = useOpenModal<ModalPropsInterface>()
+      const updateModal = useUpdateModal<ModalPropsInterface>()
+      
+      return (
+        <>
+          <div onClick={() => {
+            openModal('idOfModalToOpen', {
+              title: 'modalTitle',
+              content: 'modalContent'
+            })
+            
+            /**
+              * the modal's props will be 
+              * { title: 'newModalTitle', content: 'modalContent' }
+              * during second render
+              */
+            setTimeOut(() => {
+              updateModal('idOfModalToUpdate', {
+                title: 'newModalTitle'
+              }, true)
+            }, 5000)
+            
+            /**
+              * the modal's props will be 
+              * { title: 'newModalTitle', content: 'newModalContent' }
+              * during second render
+              */
+            setTimeOut(() => {
+              updateModal('idOfModalToUpdate', {
+                title: 'newModalTitle',
+                content: 'newModalContent'
+              })
+            }, 10000)
+          }}>open and update modal</div>
+        </>
+      )
+    }
+    ```
+
+#### `useModalProps`
+This hooks is used to get modal props, it returns a function, and get modal props by calling the function
+
+- Usage
+  ```typescript
+  import { useModalProps } from '@usemodals/react'
+
+  const getModalProps = useModalProps()
+  const props = getModalProps(modalId)
+  ```
 
 #### `useModalIsLoading`
 
@@ -223,22 +237,22 @@ This hooks is used to determine whether modal or modals is loading and returns a
 
 - Usage
 
-```tsx
-import { useModalIsLoading } from '@usemodals/react'
+  ```tsx
+    import { useModalIsLoading } from '@usemodals/react'
 
-const Page = () => {
-  //	returns true when either modal1 or modal2 is loading
-  const isLoading = useModalIsLoading(['modal1', 'modal2'])
-  
-  //	only reutrn modal1 loading state
-  const isLoading2 = useModalIsLoading('modal1')
-  
-  return (
-  	<>
-    </>
-  )
-}
-```
+    const Page = () => {
+      //	returns true when either modal1 or modal2 is loading
+      const isLoading = useModalIsLoading(['modal1', 'modal2'])
+      
+      //	only reutrn modal1 loading state
+      const isLoading2 = useModalIsLoading('modal1')
+      
+      return (
+        <>
+        </>
+      )
+    }
+    ```
 
 ### Motivation
 

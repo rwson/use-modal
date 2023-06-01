@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "link:local": "yalc add @usemodals/vue3"
   },
   "dependencies": {
-    "@usemodals/vue3": "^1.0.0",
+    "@usemodals/vue3": "file:.yalc/@usemodals/vue3",
     "ant-design-vue": "^3.2.20",
     "vue": "^3.2.47"
   },

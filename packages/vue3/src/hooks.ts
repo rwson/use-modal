@@ -1,5 +1,6 @@
+import { toRaw } from 'vue'
 import { ModalActionType } from './enums'
-import { mutation } from './state'
+import { mutation, state } from './state'
 
 export const useRegisterModal = () => (id: string) => mutation({
   type: ModalActionType.RegisterModal,
@@ -40,3 +41,5 @@ export const useCloseModal = () => (id: string) => mutation({
 })
 
 export const useCloseAllModals = () => () => mutation({ type: ModalActionType.CloseAllModals })
+
+export const useModalProps = () => <T extends any>(id: string): T | undefined => toRaw(state[id]?.props ?? {}) as T | undefined

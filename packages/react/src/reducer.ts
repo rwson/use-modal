@@ -18,14 +18,13 @@ export const reducer = produce(
         if (currentModal) {
           currentModal.visible = true
           currentModal.props = Object.assign({}, payloadProps ?? {})
-
           state.set(payloadId, currentModal as ModalItem)
         }
 
         return state
 
       case ModalActionType.UpdateModal:
-        if (currentModal) {
+        if (currentModal && currentModal.visible) {
           let oldPorps = {}
           if (__mergeProps___) {
             oldPorps = currentModal.props ?? {}

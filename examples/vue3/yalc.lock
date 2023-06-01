@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "@usemodals/vue3": {
-      "signature": "cb1cdb711a292db2560e10ee61c11db0",
+      "signature": "cd7aced28608927d514b54175810c6b0",
       "file": true,
       "replaced": "^1.0.0"
     }

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { ModalActionType } from './enums'
-import { mutation } from './state'
+import { mutation, state } from './state'
 
 export const injectMethods = (vm: typeof Vue) => {
   vm.prototype.__registerModal__ = (id: string) => mutation({
@@ -40,6 +40,10 @@ export const injectMethods = (vm: typeof Vue) => {
       id
     }
   })
+
+  vm.prototype.getModalProps = (id: string) => {
+    state[id]?.props || undefined
+  }
 
   vm.prototype.closeAllModals = () => mutation({
     type: ModalActionType.CloseAllModals

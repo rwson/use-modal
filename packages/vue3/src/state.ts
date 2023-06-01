@@ -21,6 +21,7 @@ export const mutation = (value: UpdateStatePayload) => {
       if (!state[payload?.id!]) {
         throw new Error(`modal '${payload?.id}' not exist, please register it before your use`)
       }
+
       state[payload?.id!].visible = true
       state[payload?.id!].props = payload?.props!
     break
@@ -43,7 +44,7 @@ export const mutation = (value: UpdateStatePayload) => {
       }
 
       if (!state[payload?.id!].visible) {
-        throw new Error(`modal '${payload?.id}' not opened, please call 'openModal' to open it before call 'updateModal'`)
+        return
       }
 
       const originProps = state[payload?.id!].props ?? {}

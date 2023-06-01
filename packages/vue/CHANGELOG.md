@@ -10,3 +10,9 @@
 - Implement `updateModal` function
 - Implement `closeModal` function
 - Implement `closeAllModals` function
+
+
+## [@usemodals/vue@1.1.0] - 2023-06-01
+
+### <Features>
+- Implement `getModalProps` function
